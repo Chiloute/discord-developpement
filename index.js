@@ -5,7 +5,7 @@ const prefix = '£'
 client.login(process.env.TOKEN);
 
 client.on('ready', ()=>{
-    client.user.setPresence ({ game: { name: '[()help]', type: 0} });
+    client.user.setPresence ({ game: { name: '[£help]', type: 0} });
       console.log('discord-developpement')
   });
 
