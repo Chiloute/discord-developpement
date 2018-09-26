@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '£'
 
-client.login("NDkzNDc3MTU4NTUxODE0MTcx.DoliWA.INZxADVk9F3lEnC1cavEB_ca1RI");
+client.login(process.env.TOKEN);
 
 client.on('ready', ()=>{
     client.user.setPresence ({ game: { name: '[()help]', type: 0} });
