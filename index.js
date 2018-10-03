@@ -36,7 +36,7 @@ client.on('message', async message => {
     }  
 
     if (message.content === prefix + "commande") {
-        message.channel.send("Comment commander un ou des comptes ? Vous devez tous simplement contacter @SillehX1#0001")
+        message.channel.send("Comment commander un bot discord ou un site ? Vous devez tous simplement faire la commande -new Bot discord ou site web")
     }
 
     if (message.content === prefix + "info") {
