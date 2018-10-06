@@ -148,3 +148,16 @@ client.on('message', async message => {
     }
 
 });
+
+client.on('guildMemberAdd', member => {
+    let role = member.guild.roles.find("name", "Client");
+    member.guild.channels.find("name", "bienvenue").send(`:hand_splayed: coucou à toi ${member.user.username} !`)
+    member.addRole(role)
+});
+
+
+
+
+client.on('guildMemberRemove', member => {
+    member.guild.channels.find("name", "bienvenue").send(`:cry: Bye bye ${member.user.username} ;( tu nous manque déja tu sais !)`)
+});
