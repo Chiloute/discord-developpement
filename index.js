@@ -151,7 +151,7 @@ client.on('message', async message => {
 
 client.on('guildMemberAdd', member => {
     let role = member.guild.roles.find("name", "Client");
-    member.guild.channels.find("name", "bienvenue").send(`:hand_splayed: coucou à toi ${member.user.username} !`)
+    member.guild.channels.find("name", "bienvenue").send(`Hey ${member.user.username} bienvenue dans Site Web | Bot discord | VPN !`)
     member.addRole(role)
 });
 
@@ -159,5 +159,5 @@ client.on('guildMemberAdd', member => {
 
 
 client.on('guildMemberRemove', member => {
-    member.guild.channels.find("name", "bienvenue").send(`:cry: Bye bye ${member.user.username} ;( tu nous manque déja tu sais !)`)
+    member.guild.channels.find("name", "bienvenue").send(`Aurevoir  ${member.user.username} tu nous manque déja tu sais !)`)
 });
