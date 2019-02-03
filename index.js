@@ -10,23 +10,36 @@ client.on('ready', ()=>{
   });
 
 client.on('message', async message => {
-  
     if(message.content === prefix + "help") {
         var help_embed = new Discord.RichEmbed()
         .setColor("#3E4E6B")
-        .setTitle("Command | Help:")
+        .setTitle("Commande | Help:")
         .addField("£help", "affiche les commmandes")
-        .addField("£kick", "permet d'expulser le membre ")
-        .addField("£ban", "permet de ban les membre")
-        .addField("£mute", "permet de mute une personne (ce n'est pas temporaire)")
-        .addField("£unmute", "permet de unmute ")
-        .addField("£clear", "permet le clear des message jusqu'a 100 message (a eviter de faire 100 message il vaut mieu mettre 99)")
-        .addField("£commande", "permet de savoir comment commander ")
+        .addField("£help-admin","permet de voir les commandes d'administrateur")
         .addField("£info","permet d'avoir des information sur le discord")
+        .addField("£commande", "permet de savoir comment commander ")
         .setThumbnail(client.user.avatarURL)
         .setFooter("Chiloute - BOT, menu help")
-        message.channel.send(help_embed)
+        message.author.createDM().then(channel => {
+            channel.send(help_embed)
+        })
     } 
+    if(message.content === prefix + "help-admin") {
+        var helpadmin_embed = new Discord.RichEmbed()
+        .setColor("#3E4E6B")
+        .setTitle("Commande | Help_Admin: ")
+        .addField("£mute", "permet de mute une personne (ce n'est pas temporaire)")
+        .addField("£unmute", "permet de unmute ")
+        .addField("£kick", "permet d'expulser le membre ")
+        .addField("£ban", "permet de ban les membre")
+        .addField("£clear", "permet le clear des message jusqu'a 100 message")
+        .setThumbnail(client.user.avatarURL)
+        .setFooter("Chiloute - BOT, menu help")
+        message.author.createDM().then(channel => {
+            channel.send(helpadmin_embed)
+        })
+        
+    }
       if(message.content === prefix + "avatar") {
          var avatar_embed = new Discord.RichEmbed()
         .setColor("#3E4E6B")
